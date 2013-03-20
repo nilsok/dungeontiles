@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<title>Dungeon-Tiles</title>
+<script src="js/jquery/jquery.js"></script>
+<script src="js/dungeonTiles.js"></script>
+<script src="js/dungeonTiles.directions.js"></script>
+<script src="js/dungeonTiles.logic.js"></script>
+<script src="js/dungeonTiles.logic.createMap.js"></script>
+<script src="js/dungeonTiles.logic.johnny.makeDoors.js"></script>
+<script src="js/dungeonTiles.logic.nils.makeDoors.js"></script>
+<script src="js/dungeonTiles.logic.createGame.js"></script>
+<script src="js/dungeonTiles.ui.js"></script>
+<script src="js/dungeonTiles.play.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Fredericka+the+Great' rel='stylesheet' type='text/css'>
+<link href="css/reset.css" rel="StyleSheet" type="text/css"/>
+<link href="css/style.css" rel="StyleSheet" type="text/css"/>
+<body>
+	<div id="wrapper">
+	<div id="introWrapper" style="color: white">
+		<div id="logoText">Dungeon<br/>Tiles</div>
+	
+		<div id="formWrapper">
+			<form>
+				<label>HEIGHT:</label>
+				<select name="height" >
+					<option value="5">5</option>
+					<option value="10">10</option>
+					<option value="20" selected="selected">20</option>
+					<option value="30">30</option>
+					<option value="40">40</option>
+					<option value="50">50</option>
+				</select>
+			
+				<label>WIDTH:</label>
+				<select name="width">
+					<option value="5">5</option>
+					<option value="10">10</option>
+					<option value="20" selected="selected">20</option>
+					<option value="30">30</option>
+					<option value="40">40</option>
+					<option value="50">50</option>
+				</select>
+				
+				<input type="radio" name="difficulty" value="true" checked="checked">Easy</input>
+				<input type="radio" name="difficulty" value="false">Hard</input>
+				<input type="button" name="start" value="START" />
+			</form>
+		</div>
+	</div>
+</div>
+</body>
