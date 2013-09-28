@@ -152,7 +152,7 @@ dungeonTiles.logic.createMap = function (maxRows, maxCols) {
 				//om aTile inte ligger på översta/nollte raden
 				if(i > 0) {
 					//sätt UP-sidan till antingen OPEN eller WALL
-					aTile.setSide(dungeonTiles.directions.UP, parseInt(Math.random()* 10 ,10) > 6 ? OPEN : WALL);
+					aTile.setSide(dungeonTiles.directions.UP, parseInt(Math.random()* 10 ,10) > dungeonTiles.logic.WALL_PROBABILITY ? OPEN : WALL);
 					//hämta ovanstående rum och sätt dess DOWN-sida till samma som aTiles UP-sida
 					var tileAbove = map[i-1][j];
 					tileAbove.setSide(dungeonTiles.directions.DOWN, aTile.getSide(dungeonTiles.directions.UP));
@@ -160,21 +160,22 @@ dungeonTiles.logic.createMap = function (maxRows, maxCols) {
 				};
 				//anledningen till att vi fick fel igårkväll var för att den gick utanför arrayen. Glömde sätta -1 på maxRows
 				if(i < maxRows-1) {
-					aTile.setSide(dungeonTiles.directions.DOWN, parseInt(Math.random()* 10 ,10) > 6 ? OPEN : WALL);
+					aTile.setSide(dungeonTiles.directions.DOWN, parseInt(Math.random()* 10 ,10) > dungeonTiles.logic.WALL_PROBABILITY ? OPEN : WALL);
 					var tileBelow = map[i+1][j];
 					tileBelow.setSide(dungeonTiles.directions.UP, aTile.getSide(dungeonTiles.directions.DOWN));
 					// console.log(aTile.getSide(dungeonTiles.directions.DOWN));
 				};
 				
 				if(j > 0) {
-					aTile.setSide(dungeonTiles.directions.LEFT, parseInt(Math.random()* 10 ,10) > 6 ? OPEN : WALL);
+					aTile.setSide(dungeonTiles.directions.LEFT, parseInt(Math.random()* 10 ,10) > dungeonTiles.logic.WALL_PROBABILITY ? OPEN : WALL);
 					var tileLeft = map[i][j-1];
 					tileLeft.setSide(dungeonTiles.directions.RIGHT, aTile.getSide(dungeonTiles.directions.LEFT));
 					// console.log(aTile.getSide(dungeonTiles.directions.LEFT));
 				};
-				//anledningen till att vi fick fel igårkväll var för att den gick utanför arrayen. Glömde sätta -1 på maxCols
+
+
 				if(j < maxCols-1) {
-					aTile.setSide(dungeonTiles.directions.RIGHT, parseInt(Math.random()* 10 ,10) > 6 ? OPEN : WALL);
+					aTile.setSide(dungeonTiles.directions.RIGHT, parseInt(Math.random()* 10 ,10) > dungeonTiles.logic.WALL_PROBABILITY ? OPEN : WALL);
 					var tileRight = map[i][j+1];
 					tileRight.setSide(dungeonTiles.directions.LEFT, aTile.getSide(dungeonTiles.directions.RIGHT));
 					// console.log(aTile.getSide(dungeonTiles.directions.RIGHT));
