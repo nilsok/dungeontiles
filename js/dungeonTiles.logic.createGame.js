@@ -1,10 +1,12 @@
 
 dungeonTiles.logic.createGame = function (mapHeight, mapWidth, boolEasy) {
-	var i, j, map, foundTreasure, playerRow = 0, playerCol = 0, treasureRow, treasureCol, move, discover;
+	var i, j, map, foundTreasure, playerRow = 0, playerCol = 0, treasureRow, treasureCol, move, discover, player;
 	
 	foundTreasure = false;
 	map = dungeonTiles.logic.createMap(mapHeight, mapWidth);
-	
+	player = initPlayer();
+
+
 	if (boolEasy) {
 		dungeonTiles.logic.johnny.makeDoors(map);
 	} else { // hard!
@@ -18,10 +20,35 @@ dungeonTiles.logic.createGame = function (mapHeight, mapWidth, boolEasy) {
 				treasureRow = i;
 				treasureCol = j;
 				break;
-			} 
+			}
 		}
 	}
-	
+
+	initPlayer =  function() {
+
+		var foundKeys = [];
+
+		getKeys = function() {
+			return foundKeys;
+		};
+
+		addKey = function (key) {
+			foundKeys.push(key);
+		};
+
+		return {
+			getKeys: getKeys,
+			addKey: addKey
+		}
+	};
+
+
+	key = function (color) {
+		return {
+			color: color
+		}
+	}
+
 
 	// nollställ alla accessible
 	for (i = 0; i < map.length; i++) {

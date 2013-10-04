@@ -4,7 +4,9 @@
 //HARD Version
 dungeonTiles.logic.nils = {};
 dungeonTiles.logic.nils.makeDoors = function (map) {
-	
+
+
+
 	/**
 	 * Starts at top/left (position[0][0]) and finds all tiles that are accessible from that tile
 	 * 
