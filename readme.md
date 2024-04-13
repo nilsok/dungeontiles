@@ -3,9 +3,8 @@ Dungeon Tiles
 
 A find-the-tresure-in-auto-generated-dungeons-game, in javascript.
 
-[Try it out](https://s3.eu-central-1.amazonaws.com/dungeontiles/index.html)
+Try it out: http://dungeontiles.nilsok.com
 
-Made by [Nils](http://twitter.com/nilsok) and [Johnny](http://twitter.com/nadrendion)
+Made by [Nils](http://twitter.com/nilsok) and [Johnny](http://twitter.com/nadrendion), in 2011
 
-(We're Java developers, so this was new ground for us.)
-
+We are old now.
